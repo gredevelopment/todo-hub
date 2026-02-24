@@ -1,0 +1,125 @@
+{
+  "name": "todo-hub",
+  "displayName": "Todo Hub",
+  "description": "Manage todo lists directly in VS Code with quick add, view, and checkoff commands.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gredevelopment/todo-hub.git"
+  },
+  "publisher": "gredev",
+  "pricing": "Free",
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "todo-hub.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "todo-hub.addTodo",
+        "title": "Add Todo",
+        "icon": "$(add)"
+      },
+      {
+        "command": "todo-hub.removeTodo",
+        "title": "Remove Todo",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "todo-hub.toggleComplete",
+        "title": "Toggle Complete",
+        "icon": "$(check)"
+      },
+      {
+        "command": "todo-hub.undoComplete",
+        "title": "Undo Complete",
+        "icon": "$(reply)"
+      },
+      {
+        "command": "todo-hub.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "todo-hub.renameTodo",
+        "title": "Rename Todo",
+        "icon": "$(edit)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "todoHub",
+          "title": "Todo Hub",
+          "icon": "$(checklist)"
+        }
+      ]
+    },
+    "views": {
+      "todoHub": [
+        {
+          "id": "todoHubView",
+          "name": "Todos"
+        }
+      ]
+    },
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "todo-hub.toggleComplete",
+          "when": "view == todoHubView && viewItem == todoItemOngoing",
+          "group": "inline"
+        },
+        {
+          "command": "todo-hub.undoComplete",
+          "when": "view == todoHubView && viewItem == todoItemCompleted",
+          "group": "inline"
+        },
+        {
+          "command": "todo-hub.removeTodo",
+          "when": "view == todoHubView && viewItem == todoItemCompleted",
+          "group": "inline"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "todo-hub.addTodo",
+          "when": "view == todoHubView",
+          "group": "navigation"
+        },
+        {
+          "command": "todo-hub.refresh",
+          "when": "view == todoHubView",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.109.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.54.0",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
