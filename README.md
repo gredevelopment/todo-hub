@@ -4,7 +4,7 @@ A simple, native todo list extension for Visual Studio Code. Track tasks without
 
 Todo Hub is designed to feel like a built-in feature: the tree view uses **native icons** and commands, and todos are stored in workspace state so they travel with your project.
 
-![Todo Hub Demo](https://cdn.jsdelivr.net/gh/gredevelopment/todo-hub/images/demo.jpeg)
+![Todo Hub Demo](https://cdn.jsdelivr.net/gh/gredevelopment/todo-hub/images/demo.png)
 
 ---
 
@@ -41,4 +41,4 @@ The extension is written in TypeScript. See `src/extension.ts` for the main logi
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT License. See [LICENSE](https://github.com/gredevelopment/todo-hub/blob/main/LICENSE) for details.
