@@ -7,8 +7,16 @@
     "type": "git",
     "url": "https://github.com/gredevelopment/todo-hub.git"
   },
+  "bugs": {
+    "url": "https://github.com/gredevelopment/todo-hub/issues"
+  },
+  "sponsor": {
+    "url": "https://patreon.com/gredev"
+  },
   "publisher": "gredev",
   "pricing": "Free",
+  "license": "MIT",
+  "homepage": "https://github.com/gredevelopment/todo-hub/blob/main/README.md",
   "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.109.0"
